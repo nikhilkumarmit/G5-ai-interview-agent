@@ -269,7 +269,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Branch 1: RAG resume/JD ingestion")
     parser.add_argument("--mode", choices=["test", "ingest"], default="ingest")
     parser.add_argument("--resume", default=DEFAULT_RESUME)
-    parser.add_argument("--jd", default=DEFAULT_JD)
+    parser.add_argument("--job-description", default=DEFAULT_JD)
     parser.add_argument("--top-k", type=int, default=4)
     parser.add_argument("--vector-dir", default=VECTOR_DIR)
     args = parser.parse_args()
@@ -278,11 +278,11 @@ def main() -> None:
         raise SystemExit(run_tests())
 
     resume_text = load_file(args.resume)
-    jd_text = load_file(args.jd)
+    jd_text = load_file(args.job_description)
     resume_sections = split_sections(resume_text, "resume")
     jd_sections = split_sections(jd_text, "job_description")
     resume_chunks = make_chunks(resume_sections, "resume", Path(args.resume).name)
-    jd_chunks = make_chunks(jd_sections, "job_description", Path(args.jd).name)
+    jd_chunks = make_chunks(jd_sections, "job_description", Path(args.job_description).name)
     if not resume_chunks or not jd_chunks:
         raise ValueError("No chunks created. Check that both files contain extractable text.")
 
