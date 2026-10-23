@@ -7,3 +7,21 @@ langchain-huggingface>=0.1.0
 langchain-chroma>=0.2.0
 sentence-transformers>=3.0.0
 chromadb>=0.5.0
+# G5 AI Interview Agent
+# Batch 1: resume/JD ingestion, embeddings, and Chroma RAG
+pypdf
+langchain-core
+langchain-huggingface
+langchain-chroma
+chromadb
+sentence-transformers
+
+# Groq API: question generation, LLM feedback, speech-to-text, and text-to-speech
+groq
+python-dotenv
+
+# Batch 2: terminal microphone recording and audio playback
+numpy
+sounddevice
+soundfile
+pyttsx3
