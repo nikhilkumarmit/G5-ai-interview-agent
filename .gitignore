@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+interview_data/
+data/resume/
+data/job_description/
+*.sqlite3
+*.db
