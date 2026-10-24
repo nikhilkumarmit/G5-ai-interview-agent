@@ -1,12 +1,24 @@
+# Python environment and cache
 .venv/
 venv/
 __pycache__/
 *.py[cod]
+
+# Secrets
 .env
 .env.*
 !.env.example
-interview_data/
-data/resume/
-data/job_description/
-*.sqlite3
+
+# Personal input data
+data/resume/*
+data/job_description/*
+data/audio/*
+
+# Generated interview data
+interview_data/chroma_db/
+interview_data/reports/
+interview_data/sessions/
+
+# Local databases
 *.db
+*.sqlite3
